@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@400;500&display=swap');
+
+/* ══════════════════════════════
+   RESET
+══════════════════════════════ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'Barlow', sans-serif;
+}
+
+
+/* ══════════════════════════════
+   HEADER / HERO
+══════════════════════════════ */
+header {
+    padding-top: 15px;
+    background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 10%, transparent 100%),
+        url(../imagens/Imagem\ de\ fundo\ -\ aura\ running\ com\ exposição\ fraca.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 695px;
+    position: relative;
+}
+
+/* Navbar */
+.barra-navegacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    height: 72px;
+}
+
+.barra-navegacao h4 {
+    margin: 0;
+    line-height: 0;
+}
+
+/* Links do menu */
+.menu-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.menu-links a {
+    color: rgba(255, 255, 255, 0.88);
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.menu-links a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Divisor vertical entre links e ícones */
+.nav-divider {
+    width: 1px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0 6px;
+}
+
+/* Ícones (pesquisa, carrinho, cadastro) */
+.menu-links a.icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+/* Conteúdo do hero (botões + título) */
+.hero-conteudo {
+    position: absolute;
+    bottom: 72px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    padding-left: 0;
+    padding-bottom: 48px;
+}
+
+/* Coluna dos botões */
+.hero-esquerda {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: -10px;
+}
+
+/* Título principal */
+.hero-titulo {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #fff;
+    letter-spacing: -0.02em;
+}
+
+/* Botões do hero */
+.btn-hero {
+    display: inline-block;
+    padding: 15px 80px;
+    border-radius: 0 999px 999px 0;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-hero:hover {
+    transform: scale(1.03);
+}
+
+.btn-claro {
+    background: #ffffff;
+    color: #111111;
+}
+
+.btn-claro:hover {
+    background: rgba(255, 255, 255, 0.88);
+}
+
+.btn-escuro {
+    background: #111111;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.btn-escuro:hover {
+    background: rgba(0, 0, 0, 0.75);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* ══════════════════════════════
+   SEÇÃO NOSSOS PRODUTOS
+══════════════════════════════ */
+.secao-produtos {
+    padding: 50px;
+}
+
+/* Título da seção */
+.titulo-secao {
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    margin-top: 40px;
+}
+
+/* Grid: coluna esquerda (2 imagens) + coluna direita (1 imagem) */
+.grade-produtos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.coluna-esquerda {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Card base */
+.card-produto {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.card-produto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.card-produto:hover img {
+    transform: scale(1.04);
+}
+
+/* Duas imagens empilhadas à esquerda */
+.coluna-esquerda .card-produto {
+    height: 400px;
+    width: 900px;
+}
+
+/* Imagem vertical à direita */
+.card-vertical {
+    height: 816px;
+    width: 510px;
+}
+
+/* Label no canto inferior esquerdo de cada card */
+.card-produto span {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* ══════════════════════════════
+   SEÇÃO DESTAQUES
+══════════════════════════════ */
+.secao-destaques {
+    padding: 50px 0 24px;
+}
+
+.secao-destaques .titulo-secao {
+    padding-left: 50px;
+}
+
+.carrossel-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+    user-select: none;
+}
+
+.carrossel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.carrossel {
+    display: flex;
+    gap: 8px;
+    width: max-content;
+    padding: 0 50px 24px;
+}
+
+.card-destaque {
+    position: relative;
+    display: block;
+    width: 340px;
+    height: 470px;
+    text-decoration: none;
+    color: #111;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.card-destaque img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.card-destaque:hover img {
+    transform: scale(1.04);
+}
+
+/* Nome sobre a imagem, canto inferior esquerdo */
+.card-destaque-nome {
+    font-family: 'Barlow', sans-serif;
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    font-size: 25px;
+    font-weight: 600;
+    color: #111;
+}
+
+/* Scrollbar — área de toque generosa com padding */
+.scrollbar-destaques {
+    margin: 0 50px 50px;
+    padding: 10px 0;        /* área clicável maior */
+    cursor: pointer;
+}
+
+.scrollbar-trilho {
+    height: 3px;
+    background: #e0e0e0;
+    border-radius: 99px;
+    position: relative;
+}
+
+.scrollbar-progresso {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background: #111;
+    border-radius: 99px;
+    cursor: grab;
+    transition: none;
+}
+
+/* ══════════════════════════════
+   CARD ROUPAS
+══════════════════════════════ */
+.card-roupa {
+    width: 300px;
+    height: auto;
+    background: none;
+    border-radius: 0;
+    flex-direction: column;
+}
+
+.card-roupa-img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 380px;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.card-roupa-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.card-roupa:hover .card-roupa-img img {
+    transform: scale(1.04);
+}
+
+/* Coração */
+.btn-favorito {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-favorito svg {
+    width: 22px;
+    height: 22px;
+    stroke: #fff;
+    transition: fill 0.2s ease, stroke 0.2s ease;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+}
+
+.btn-favorito.favoritado svg {
+    fill: #fff;
+    stroke: #fff;
+}
+
+/* Info abaixo da imagem */
+.card-roupa-info {
+    padding: 12px 4px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.tag-favoritos {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a5c00;
+    border: 1px solid #c8a040;
+    border-radius: 4px;
+    padding: 2px 7px;
+    width: fit-content;
+}
+
+.card-roupa-nome {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+    text-decoration: none;
+}
+
+.card-roupa-nome:hover {
+    text-decoration: underline;
+}
+
+.card-roupa-desc {
+    font-size: 13px;
+    color: #555;
+}
+
+.card-roupa-preco {
+    font-size: 14px;
+    color: #111;
+}
