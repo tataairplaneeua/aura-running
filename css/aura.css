@@ -168,7 +168,7 @@ header {
     font-size: 50px;
     font-weight: 600;
     margin-bottom: 25px;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 /* Grid: coluna esquerda (2 imagens) + coluna direita (1 imagem) */
@@ -235,6 +235,7 @@ header {
 
 .secao-destaques .titulo-secao {
     padding-left: 50px;
+    margin-top: 0px;
 }
 
 .carrossel-wrapper {
@@ -318,23 +319,26 @@ header {
 }
 
 /* ══════════════════════════════
-   CARD ROUPAS
+   CARROSSEL DE ROUPAS
 ══════════════════════════════ */
+
+.secao-roupas {
+    padding-top: 50px;
+}
+
 .card-roupa {
-    width: 300px;
-    height: auto;
-    background: none;
-    border-radius: 0;
-    flex-direction: column;
+    width: 340px;
+    flex-shrink: 0;
+    color: #111;
 }
 
 .card-roupa-img {
     position: relative;
     display: block;
-    width: 100%;
-    height: 380px;
-    border-radius: 8px;
+    width: 340px;
+    height: 470px;
     overflow: hidden;
+    border-radius: 5px;
     text-decoration: none;
 }
 
@@ -343,7 +347,6 @@ header {
     height: 100%;
     object-fit: cover;
     display: block;
-    pointer-events: none;
     transition: transform 0.3s ease;
 }
 
@@ -351,72 +354,277 @@ header {
     transform: scale(1.04);
 }
 
-/* Coração */
 .btn-favorito {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 36px;
-    height: 36px;
+    top: 18px;
+    right: 18px;
     background: none;
     border: none;
+    color: white;
+    font-size: 38px;
     cursor: pointer;
-    padding: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    z-index: 2;
+    line-height: 1;
 }
 
-.btn-favorito svg {
-    width: 22px;
-    height: 22px;
-    stroke: #fff;
-    transition: fill 0.2s ease, stroke 0.2s ease;
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+.btn-favorito.favoritado {
+    color: white;
 }
 
-.btn-favorito.favoritado svg {
-    fill: #fff;
-    stroke: #fff;
-}
-
-/* Info abaixo da imagem */
 .card-roupa-info {
-    padding: 12px 4px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
+    padding-top: 16px;
 }
 
 .tag-favoritos {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    display: inline-block;
+    color: #a46a00;
+    border: 1px solid #a46a00;
+    border-radius: 3px;
+    padding: 3px 7px;
+    font-size: 14px;
     text-transform: uppercase;
-    color: #7a5c00;
-    border: 1px solid #c8a040;
-    border-radius: 4px;
-    padding: 2px 7px;
-    width: fit-content;
+    margin-bottom: 10px;
 }
 
-.card-roupa-nome {
+.card-roupa-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.card-roupa-info p {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #111;
+}
+
+.card-roupa-info strong {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.logo-centro {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-copa {
+    margin-top: 70px;
+}
+
+/* ══════════════════════════════
+   camisetas seleções
+══════════════════════════════ */
+
+.secao-selecoes {
+    padding: 70px 50px;
+    padding-top: 100px;
+}
+
+.selecoes-container {
+    display: grid;
+    grid-template-columns: 760px 500px;
+    justify-content: center;
+    gap: 30px;
+    align-items: start;
+}
+
+.selecoes-esquerda h2 {
+    font-size: 62px;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0 0 45px;
+    color: #000;
+    padding-top: 50px;
+}
+
+.grade-selecoes {
+    display: grid;
+    grid-template-columns: repeat(3, 180px);
+    gap: 28px 18px;
+}
+
+.card-selecao {
+    width: 180px;
+    height: 180px;
+    background: #eef0f1;
+    border: 2px solid transparent;
+    cursor: pointer;
+    position: relative;
+    padding: 18px;
+    text-align: left;
+}
+
+.card-selecao:hover,
+.card-selecao.ativo {
+    border-color: #111;
+}
+
+.card-selecao img {
+    width: 115px;
+    height: 115px;
+    object-fit: contain;
+    display: block;
+    margin: -40px auto 0;
+}
+
+.card-selecao span {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    background: white;
+    color: #111;
     font-size: 15px;
     font-weight: 700;
-    color: #111;
+    padding: 4px 6px;
+}
+
+.preview-camisa {
+    border-radius: 5px;
+    width: 500px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #13b7d1, #ffdf4d);
     text-decoration: none;
+    overflow: hidden;
 }
 
-.card-roupa-nome:hover {
-    text-decoration: underline;
+.preview-camisa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.card-roupa-desc {
-    font-size: 13px;
-    color: #555;
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+
+.footer-aura {
+    margin-top: 30px;
+    padding: 70px 50px 40px;
+    background: #ffffff;
 }
 
-.card-roupa-preco {
-    font-size: 14px;
+.footer-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 100px;
+}
+
+.footer-newsletter {
+    max-width: 620px;
+}
+
+.footer-newsletter h2 {
+    font-size: 50px;
+    line-height: 1.1;
+    font-weight: 700;
     color: #111;
+    margin-bottom: 35px;
+}
+
+.footer-newsletter input {
+    width: 100%;
+    height: 82px;
+    border: 1px solid #dcdcdc;
+    background: #f8f8f8;
+    padding: 0 24px;
+    font-size: 22px;
+    outline: none;
+}
+
+.footer-newsletter input:focus {
+    border-color: #111;
+}
+
+.footer-links {
+    display: flex;
+    gap: 90px;
+}
+
+.footer-coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 180px;
+}
+
+.footer-coluna h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.footer-coluna a {
+    text-decoration: none;
+    color: #111;
+    font-size: 20px;
+    transition: opacity 0.2s ease;
+}
+
+.footer-coluna a:hover {
+    opacity: 0.6;
+}
+
+.footer-meio {
+    margin-top: 90px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 20px;
+    color: #111;
+}
+
+.footer-meio img {
+    width: 22px;
+    height: 22px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.footer-bottom {
+    margin-top: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+    flex-wrap: wrap;
+}
+
+.footer-legais {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.footer-legais a {
+    text-decoration: none;
+    color: #111;
+    font-size: 18px;
+}
+
+.footer-redes {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.footer-redes a {
+    color: #111;
+    font-size: 28px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-redes a:hover {
+    transform: translateY(-2px);
+    opacity: 0.7;
 }

@@ -6,6 +6,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/aura.css">
     <link rel="icon" type="image/png" href="imagens/c869f6d3-2097-43cc-8400-e85b6fbfee18.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
@@ -125,27 +126,262 @@
     </div>
 </section>
 
-<div class="scrollbar-destaques">
+<div class="scrollbar-destaques" id="scrollbar-destaques">
     <div class="scrollbar-trilho">
         <div class="scrollbar-progresso" id="scrollbar-progresso"></div>
     </div>
 </div>
 
-<script>
-    const wrapper = document.getElementById('carrossel-wrapper');
-    const trilho = document.querySelector('.scrollbar-trilho');
-    const areaToque = document.querySelector('.scrollbar-destaques');
-    const polegar = document.getElementById('scrollbar-progresso');
+<section class="secao-destaques secao-roupas">
+    <h2 class="titulo-secao">Monte seu outfit de alta performance</h2>
 
+    <div class="carrossel-wrapper" id="carrossel-roupas">
+        <div class="carrossel">
+
+            <div class="card-roupa">
+                <a href="roupa1.html" class="card-roupa-img">
+                    <img src="imagens/roupa_1.png" alt="AeroFlex">
+                    <button class="btn-favorito" onclick="toggleFavorito(this, event)">♡</button>
+                </a>
+                <div class="card-roupa-info">
+                    <span class="tag-favoritos">Favoritos</span>
+                    <h3>AeroFlex</h3>
+                    <p>Corra em qualquer lugar com estilo</p>
+                    <strong>R$ 419,90</strong>
+                </div>
+            </div>
+
+            <div class="card-roupa">
+                <a href="roupa2.html" class="card-roupa-img">
+                    <img src="imagens/roupa_2.png" alt="Horizon Dry Fit">
+                    <button class="btn-favorito" onclick="toggleFavorito(this, event)">♡</button>
+                </a>
+                <div class="card-roupa-info">
+                    <span class="tag-favoritos">Favoritos</span>
+                    <h3>Horizon Dry Fit</h3>
+                    <p>Treine com conforto</p>
+                    <strong>R$ 289,00</strong>
+                </div>
+            </div>
+
+            <div class="card-roupa">
+                <a href="roupa3.html" class="card-roupa-img">
+                    <img src="imagens/roupa_3.png" alt="Urban Run">
+                    <button class="btn-favorito" onclick="toggleFavorito(this, event)">♡</button>
+                </a>
+                <div class="card-roupa-info">
+                    <span class="tag-favoritos">Favoritos</span>
+                    <h3>Urban Run</h3>
+                    <p>Visual casual e esportivo</p>
+                    <strong>R$ 409,00</strong>
+                </div>
+            </div>
+
+            <div class="card-roupa">
+                <a href="roupa4.html" class="card-roupa-img">
+                    <img src="imagens/roupa_4.png" alt="Core Dry Fit">
+                    <button class="btn-favorito" onclick="toggleFavorito(this, event)">♡</button>
+                </a>
+                <div class="card-roupa-info">
+                    <span class="tag-favoritos">Favoritos</span>
+                    <h3>Core Dry Fit</h3>
+                    <p>Leveza para o dia a dia</p>
+                    <strong>R$ 329,00</strong>
+                </div>
+            </div>
+
+            <div class="card-roupa">
+                <a href="roupa5.html" class="card-roupa-img">
+                    <img src="imagens/roupa_5.png" alt="Flex Jogger Run">
+                    <button class="btn-favorito" onclick="toggleFavorito(this, event)">♡</button>
+                </a>
+                <div class="card-roupa-info">
+                    <span class="tag-favoritos">Favoritos</span>
+                    <h3>Flex Jogger Run</h3>
+                    <p>Corra com performance e mobilidade</p>
+                    <strong>R$ 439,90</strong>
+                </div>
+            </div>
+
+            <div class="card-roupa">
+                <a href="roupa6.html" class="card-roupa-img">
+                    <img src="imagens/roupa_6.png" alt="Essential-T">
+                    <button class="btn-favorito" onclick="toggleFavorito(this, event)">♡</button>
+                </a>
+                <div class="card-roupa-info">
+                    <h3>Essential-T</h3>
+                    <p>Básica, respirável e confortável</p>
+                    <strong>R$ 599,00</strong>
+                </div>
+            </div>
+
+            <div class="card-roupa">
+                <a href="roupa7.html" class="card-roupa-img">
+                    <img src="imagens/roupa_7.png" alt="Run Shift">
+                    <button class="btn-favorito" onclick="toggleFavorito(this, event)">♡</button>
+                </a>
+                <div class="card-roupa-info">
+                    <h3>Run Shift</h3>
+                    <p>Relaxe ou corra com conforto</p>
+                    <strong>R$ 305,00</strong>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="scrollbar-destaques" id="scrollbar-roupas">
+    <div class="scrollbar-trilho">
+        <div class="scrollbar-progresso" id="progresso-roupas"></div>
+    </div>
+</div>
+
+<div class="logo-centro">
+    <img src="imagens/AURA x COPA.png" alt="Produto 5" height="200px">
+</div>
+
+<div class="banner-copa">
+    <img src="imagens/JOGA COM AURA.png" alt="Produto 5" height="287px">
+</div>
+
+<section class="secao-selecoes">
+    <div class="selecoes-container">
+        <div class="selecoes-esquerda">
+            <h2>Encontre sua seleção</h2>
+
+            <div class="grade-selecoes">
+                <button class="card-selecao ativo" data-camisa="imagens/camisa-brasil.png" data-link="brasil.html">
+                    <img src="imagens/brasao-brasil.png" alt="Brasil">
+                    <span>Brasil</span>
+                </button>
+
+                <button class="card-selecao" data-camisa="imagens/camisa-eua.png" data-link="eua.html">
+                    <img src="imagens/brasao-eua.png" alt="Estados Unidos">
+                    <span>Estados Unidos</span>
+                </button>
+
+                <button class="card-selecao" data-camisa="imagens/camisa-canada.png" data-link="canada.html">
+                    <img src="imagens/brasao-canada.png" alt="Canadá">
+                    <span>Canadá</span>
+                </button>
+
+                <button class="card-selecao" data-camisa="imagens/camisa-espanha.png" data-link="espanha.html">
+                    <img src="imagens/brasao-espanha.png" alt="Espanha">
+                    <span>Espanha</span>
+                </button>
+
+                <button class="card-selecao" data-camisa="imagens/camisa-franca.png" data-link="franca.html">
+                    <img src="imagens/brasao-franca.png" alt="França">
+                    <span>França</span>
+                </button>
+
+                <button class="card-selecao" data-camisa="imagens/camisa-nova-zelandia.png" data-link="nova-zelandia.html">
+                    <img src="imagens/brasao-nova-zelandia.png" alt="Nova Zelândia">
+                    <span>Nova Zelândia</span>
+                </button>
+           </div>
+        </div>
+
+        <a href="brasil.html" class="preview-camisa" id="previewCamisa">
+            <img src="imagens/camisa-brasil.png" alt="Camisa da seleção" id="imagemCamisa">
+        </a>
+    </div>
+</section>
+
+<footer class="footer-aura">
+
+    <div class="footer-topo">
+
+        <div class="footer-newsletter">
+            <h2>
+                Fique por dentro para receber ofertas exclusivas
+                e lançamentos antecipados
+            </h2>
+
+            <form>
+                <input type="email" placeholder="E-mail *">
+            </form>
+        </div>
+
+        <div class="footer-links">
+
+            <div class="footer-coluna">
+                <h4>Institucional</h4>
+
+                <a href="sobre.html">Sobre nós</a>
+                <a href="inspiracoes.html">Inspirações</a>
+                <a href="contato.html">Contato</a>
+            </div>
+
+            <div class="footer-coluna">
+                <h4>Explorar</h4>
+
+                <a href="masculino.html">Masculino</a>
+                <a href="feminino.html">Feminino</a>
+                <a href="acessorios.html">Acessórios</a>
+                <a href="tenis.html">Tênis</a>
+                <a href="selecoes.html">Seleções</a>
+
+            </div>
+
+            <div class="footer-coluna">
+                <h4>Ajuda</h4>
+
+                <a href="trocas.html">Trocas e devoluções</a>
+                <a href="entregas.html">Entregas</a>
+                <a href="faq.html">FAQ</a>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-meio">
+        <img src="imagens/bandeira-brasil.svg" alt="Brasil">
+        <span>Brasil</span>
+    </div>
+
+    <div class="footer-bottom">
+
+        <div class="footer-legais">
+            <a href="#">© Aura Running 2026</a>
+            <a href="#">Termos e Condições</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Cookies</a>
+            <a href="#">Acessibilidade</a>
+        </div>
+
+        <div class="footer-redes">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+function iniciarCarrossel(wrapper, trilho, areaToque, polegar) {
     function atualizarScrollbar() {
         const ratio = wrapper.clientWidth / wrapper.scrollWidth;
         polegar.style.width = (ratio * 100) + '%';
-        polegar.style.left = (wrapper.scrollLeft / wrapper.scrollWidth * 100) + '%';
+
+        const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
+        const maxLeft = 100 - (ratio * 100);
+
+        polegar.style.left = maxScroll > 0
+            ? (wrapper.scrollLeft / maxScroll) * maxLeft + '%'
+            : '0%';
     }
+
     wrapper.addEventListener('scroll', atualizarScrollbar);
     atualizarScrollbar();
 
-    // Arrastar polegar — área de toque inclui padding ao redor
     let arrastando = false;
     let inicioX, scrollInicio;
 
@@ -155,17 +391,19 @@
         scrollInicio = wrapper.scrollLeft;
         e.preventDefault();
     });
+
     document.addEventListener('mousemove', (e) => {
         if (!arrastando) return;
         const delta = e.clientX - inicioX;
-        const ratio = wrapper.scrollWidth / trilho.clientWidth;
-        wrapper.scrollLeft = scrollInicio + delta * ratio;
+        wrapper.scrollLeft = scrollInicio + delta * (wrapper.scrollWidth / trilho.clientWidth);
     });
-    document.addEventListener('mouseup', () => { arrastando = false; });
 
-    // Arrastar carrossel
+    document.addEventListener('mouseup', () => {
+        arrastando = false;
+    });
+
     let arrastando2 = false;
-    let inicioX2, scrollInicio2, moveu;
+    let inicioX2, scrollInicio2, moveu = false;
 
     wrapper.addEventListener('mousedown', (e) => {
         arrastando2 = true;
@@ -175,22 +413,78 @@
         wrapper.style.cursor = 'grabbing';
         e.preventDefault();
     });
+
     document.addEventListener('mousemove', (e) => {
         if (!arrastando2) return;
         const delta = e.clientX - inicioX2;
         if (Math.abs(delta) > 5) moveu = true;
         wrapper.scrollLeft = scrollInicio2 - delta;
     });
+
     document.addEventListener('mouseup', () => {
         arrastando2 = false;
         wrapper.style.cursor = 'grab';
     });
 
-    wrapper.querySelectorAll('.card-destaque').forEach(card => {
+    wrapper.querySelectorAll('a, .card-destaque, .card-roupa').forEach(card => {
         card.addEventListener('click', (e) => {
             if (moveu) e.preventDefault();
         });
     });
+}
+
+iniciarCarrossel(
+    document.getElementById('carrossel-wrapper'),
+    document.querySelector('#scrollbar-destaques .scrollbar-trilho'),
+    document.getElementById('scrollbar-destaques'),
+    document.getElementById('scrollbar-progresso')
+);
+
+iniciarCarrossel(
+    document.getElementById('carrossel-roupas'),
+    document.querySelector('#scrollbar-roupas .scrollbar-trilho'),
+    document.getElementById('scrollbar-roupas'),
+    document.getElementById('progresso-roupas')
+);
+
+function toggleFavorito(btn, e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    btn.classList.toggle('favoritado');
+    btn.innerHTML = btn.classList.contains('favoritado') ? '♥' : '♡';
+}
+
+const cardsSelecao = document.querySelectorAll('.card-selecao');
+const imagemCamisa = document.getElementById('imagemCamisa');
+const previewCamisa = document.getElementById('previewCamisa');
+
+cardsSelecao.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        cardsSelecao.forEach(c => c.classList.remove('ativo'));
+        card.classList.add('ativo');
+
+        imagemCamisa.src = card.dataset.camisa;
+        previewCamisa.href = card.dataset.link;
+    });
+});
+
+cardsSelecao.forEach(card => {
+
+    card.addEventListener('mouseenter', () => {
+        cardsSelecao.forEach(c => c.classList.remove('ativo'));
+
+        card.classList.add('ativo');
+
+        imagemCamisa.src = card.dataset.camisa;
+        previewCamisa.href = card.dataset.link;
+    });
+
+    card.addEventListener('click', () => {
+        window.location.href = card.dataset.link;
+    });
+
+});
 </script>
 
 </body>
