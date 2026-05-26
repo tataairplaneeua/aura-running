@@ -30,67 +30,47 @@
                     </svg>
                 </a>
 
-                <!-- Ícone carrinho -->
-                <a href="carrinho.html" class="icone" title="Carrinho">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-                        <line x1="3" y1="6" x2="21" y2="6"/>
-                        <path d="M16 10a4 4 0 01-8 0"/>
-                    </svg>
-                </a>
-
-                <!-- Ícone cadastro -->
-                <!-- Ícone cadastro -->
+<!-- Ícone cadastro -->
 <div class="cadastro-container">
-
 	<a href="#" class="icone" id="abrirLogin" title="Cadastro">
 		<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 			<path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
 			<circle cx="12" cy="7" r="4"/>
 		</svg>
 	</a>
+</div>
+</nav>
 
-	<div class="painel-login" id="painelLogin">
+<div class="painel-overlay" id="overlay"></div>
 
-		<button class="fechar">✕</button>
+<div class="painel-login" id="painelLogin">
+	<div class="login-direita">
+		<h2>Faça login ou crie uma conta</h2>
+		<p>Digite seu e-mail para se cadastrar ou fazer login.</p>
 
-		<div class="login-direita">
+		<input type="email" placeholder="E-mail *">
 
-			<h2>Faça login ou crie uma conta</h2>
+		<button class="btn-continuar">Continuar</button>
 
-			<p>
-				Digite seu e-mail para entrar ou cadastrar.
-			</p>
-
-			<input type="email" placeholder="E-mail">
-
-			<button class="btn-continuar">
-				Continuar
-			</button>
-
-			<div class="linha-ou">
-				<span></span>
-				Ou
-				<span></span>
-			</div>
-
-			<div class="social">
-				<button>
-					<i class="fa-brands fa-google"></i>
-				</button>
-
-				<button>
-					<i class="fa-brands fa-apple"></i>
-				</button>
-			</div>
-
+		<div class="linha-ou">
+			<span></span>
+			Ou
+			<span></span>
 		</div>
 
-	</div>
+		<div class="social">
+			<button><i class="fa-brands fa-google"></i></button>
+			<button><i class="fa-brands fa-apple"></i></button>
+		</div>
 
+		<p class="termos">
+			Ao continuar, você concorda com os
+			<a href="#">Termos de Serviço da Aura</a>
+			e declara ter lido nossa
+			<a href="#">Política de Privacidade.</a>
+		</p>
+	</div>
 </div>
-            </div>
-        </nav>
         <div class="hero-conteudo">
             <div class="hero-esquerda">
                 <a href="#" class="btn-hero btn-claro">Para ele</a>
@@ -410,52 +390,47 @@
 
 
 <script>
-<!--cadastro-->
+// cadastro
 const abrir=document.getElementById("abrirLogin");
 const painel=document.getElementById("painelLogin");
+const overlay=document.getElementById("overlay");
+const header=document.querySelector("header");
 
 let tempoAbrir;
-let tempoFechar;
 
 abrir.addEventListener("mouseenter",()=>{
-
-	clearTimeout(tempoFechar);
-
 	tempoAbrir=setTimeout(()=>{
 		painel.classList.add("ativo");
-	},400);
-
+		overlay.classList.add("ativo");
+		header.classList.add("login-aberto");
+		document.body.classList.add("login-travado");
+	},350);
 });
 
 abrir.addEventListener("click",(e)=>{
 	e.preventDefault();
-
-	clearTimeout(tempoAbrir);
-
 	painel.classList.add("ativo");
+	overlay.classList.add("ativo");
+	header.classList.add("login-aberto");
+	document.body.classList.add("login-travado");
 });
 
-painel.addEventListener("mouseenter",()=>{
-	clearTimeout(tempoFechar);
+overlay.addEventListener("click",()=>{
+	painel.classList.remove("ativo");
+	overlay.classList.remove("ativo");
+	header.classList.remove("login-aberto");
+	document.body.classList.remove("login-travado");
 });
 
 document.addEventListener("mousemove",(e)=>{
-
 	if(
 		!abrir.contains(e.target)
 		&&
 		!painel.contains(e.target)
 	){
-
-		tempoFechar=setTimeout(()=>{
-			painel.classList.remove("ativo");
-		},250);
-
+		clearTimeout(tempoAbrir);
 	}
-
 });
-
-
 
 
 function iniciarCarrossel(wrapper, trilho, areaToque, polegar) {
