@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@400;500&display=swap');
+
+
+/* Navbar */
+.barra-navegacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    height: 95px;
+}
+
+.barra-navegacao h4 {
+    margin: 0;
+    line-height: 0;
+    margin-top: 12px;
+}
+
+/* Links do menu */
+.menu-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.menu-links a {
+    color: rgba(0, 0, 0, 0.88);
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.menu-links a:hover {
+    color: #000000;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Divisor vertical entre links e ícones */
+.nav-divider {
+    width: 1px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0 6px;
+}
+
+/* Ícones (pesquisa, carrinho, cadastro) */
+.menu-links a.icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+/* cadastro */
+.painel-login{
+	position:fixed;
+	top:0;
+	right:-56vw;
+	width:56vw;
+	height:100vh;
+	background:white;
+	z-index:99999;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	padding:0 120px;
+	box-sizing:border-box;
+	opacity:0;
+	visibility:hidden;
+	transition:.4s ease;
+	box-shadow:-15px 0 40px rgba(0,0,0,.25);
+}
+
+.painel-login.ativo{
+	right:0;
+	opacity:1;
+	visibility:visible;
+}
+
+.login-direita{
+	width:100%;
+	max-width:620px;
+	font-family:Inter,Arial,sans-serif;
+	color:#000;
+}
+
+.login-direita h2{
+	font-size:36px;
+	font-weight:800;
+	line-height:1.15;
+	letter-spacing:-1px;
+	margin:0 0 22px;
+}
+
+.login-direita p{
+	font-size:22px;
+	font-weight:400;
+	line-height:1.35;
+	color:#000;
+	margin:0 0 28px;
+}
+
+.login-direita input{
+	width:100%;
+	height:74px;
+	padding:0 24px;
+	font-size:18px;
+	background:#f3f3f3;
+	border:1px solid #ddd;
+	outline:none;
+	box-sizing:border-box;
+	margin-bottom:25px;
+}
+
+.btn-continuar{
+	width:100%;
+	height:64px;
+	border:0;
+	border-radius:50px;
+	background:#000;
+	color:#fff;
+	font-size:18px;
+	font-weight:700;
+	cursor:pointer;
+	margin-bottom:45px;
+}
+
+.linha-ou{
+	display:flex;
+	align-items:center;
+	gap:22px;
+	margin-bottom:32px;
+	font-size:18px;
+	color:#000;
+}
+
+.linha-ou::before,
+.linha-ou::after{
+	content:"";
+	flex:1;
+	height:1px;
+	background:#ddd;
+}
+
+.linha-ou span{
+	display:none;
+}
+
+.social{
+	display:flex;
+	gap:14px;
+}
+
+.social button{
+	flex:1;
+	height:58px;
+	border:1px solid #111;
+	border-radius:50px;
+	background:#fff;
+	font-size:24px;
+	cursor:pointer;
+}
+
+.fechar{
+	position:absolute;
+	top:32px;
+	right:38px;
+	background:none;
+	border:0;
+	font-size:36px;
+	cursor:pointer;
+	color:#000;
+}
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fff;
+    color:#111;
+}
+
+
+.logo a{
+    text-decoration:none;
+    color:black;
+    font-size:32px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.menu-central{
+    display:flex;
+    gap:40px;
+}
+
+.menu-central a{
+    text-decoration:none;
+    color:#111;
+    font-size:15px;
+    font-weight:500;
+}
+
+.menu-direita{
+    display:flex;
+    gap:25px;
+}
+
+.menu-direita a{
+    text-decoration:none;
+    color:#111;
+    font-size:14px;
+}
+
+.produto{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:20px;
+    padding:30px 5% 20px;
+}
+
+.galeria{
+    width:40%;
+    display:flex;
+    justify-content:flex-end;
+    gap: 20px;
+}
+
+
+.miniaturas{
+    display:flex;
+    flex-direction:column;
+    gap: 12px;
+}
+
+.miniaturas img{
+    width:70px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+    border:1px solid transparent;
+}
+
+.miniaturas img:hover{
+    transform:scale(1.05);
+    border:1px solid #000;
+}
+
+.imagem-principal{
+    position:relative;
+    width:450px;
+    height:550px;
+    border-radius:24px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+
+.imagem-principal img{
+    width: 85%;
+    max-width:none;
+    border-radius:24px;
+    background:#f4f4f4;
+}
+
+.info{
+    width:380px;
+    margin-left:20px;
+}
+
+.tag{
+    font-size:13px;
+    color:#666;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.info h1{
+    font: size 32px;
+    margin:10px 0;
+}
+
+.subtitulo{
+    color:#555;
+    font-size:15px;
+    margin-bottom:10px;
+}
+
+.preco{
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.titulo-tamanho{
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.grade-tamanhos{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-bottom:20px;
+}
+
+.grade-tamanhos button{
+    padding: 10px;
+    border:1px solid #ccc;
+    background:white;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.grade-tamanhos button:hover{
+    border-color:black;
+}
+
+.btn-comprar{
+    width:100%;
+    padding: 14px;
+    border:none;
+    border-radius:999px;
+    background:black;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    margin-bottom:15px;
+}
+
+.btn-comprar:hover{
+    opacity:.9;
+}
+
+.descricao{
+    font-size:14px;
+    line-height:1.4;
+    color:#444;
+}
+
+.beneficios{
+    margin: top 15px;
+}
+
+.beneficios div{
+    padding:6px 0;
+    border-bottom:1px solid #eee;
+    font-size: 13px;
+}
+
+@media(max-width:1000px){
+
+    .produto{
+        flex-direction:column;
+    }
+
+  .info{
+    width:380px;
+    margin-left:20px;
+    margin-top:-10px;
+}
+.seta{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    border:none;
+    background:white;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+.esquerda{
+    left:15px;
+}
+
+.direita{
+    right:15px;
+}
+.logo-aura{
+    position: relative;
+    top: 12px;
+}
+}
+
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+
+.footer-aura {
+    margin-top: 30px;
+    padding: 70px 50px 40px;
+    background: #ffffff;
+}
+
+.footer-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 100px;
+}
+
+.footer-newsletter {
+    max-width: 620px;
+}
+
+.footer-newsletter h2 {
+    font-size: 50px;
+    line-height: 1.1;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 35px;
+}
+
+.footer-newsletter input {
+    width: 100%;
+    height: 82px;
+    border: 1px solid #dcdcdc;
+    background: #f8f8f8;
+    padding: 0 24px;
+    font-size: 22px;
+    outline: none;
+}
+
+.footer-newsletter input:focus {
+    border-color: #111;
+}
+
+.footer-links {
+    display: flex;
+    gap: 90px;
+}
+
+.footer-coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 180px;
+}
+
+.footer-coluna h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.footer-coluna a {
+    text-decoration: none;
+    color: #111;
+    font-size: 20px;
+    transition: opacity 0.2s ease;
+}
+
+.footer-coluna a:hover {
+    opacity: 0.6;
+}
+
+.footer-meio {
+    margin-top: 90px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 20px;
+    color: #111;
+}
+
+.footer-meio img {
+    width: 22px;
+    height: 22px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.footer-bottom {
+    margin-top: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+    flex-wrap: wrap;
+}
+
+.footer-legais {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.footer-legais a {
+    text-decoration: none;
+    color: #111;
+    font-size: 18px;
+}
+
+.footer-redes {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.footer-redes a {
+    color: #111;
+    font-size: 28px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-redes a:hover {
+    transform: translateY(-2px);
+    opacity: 0.7;
+}

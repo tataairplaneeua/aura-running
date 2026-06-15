@@ -25,9 +25,11 @@ header {
         url(../imagens/Imagem\ de\ fundo\ -\ aura\ running\ com\ exposição\ fraca.png);
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: 
+    -repeat;
     height: 695px;
     position: relative;
+    
 }
 
 /* Navbar */
@@ -43,6 +45,7 @@ header {
     margin: 0;
     line-height: 0;
 }
+
 
 /* Links do menu */
 .menu-links {
