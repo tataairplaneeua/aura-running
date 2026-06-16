@@ -30,6 +30,23 @@
                     </svg>
                 </a>
 
+<!-- Ícone carrinho -->
+<a href="#" class="icone icone-carrinho" id="abrirCarrinho">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+
+        <!-- alça -->
+        <path d="M9 8V7a3 3 0 0 1 6 0v1"/>
+
+        <!-- sacola -->
+        <path d="M6 8h12v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8z"/>
+    </svg>
+</a>
+
+
 <!-- Ícone cadastro -->
 <div class="cadastro-container">
 	<a href="#" class="icone" id="abrirLogin" title="Cadastro">
@@ -100,16 +117,63 @@
         </div>
     </section>
 
+    <!-- CARRINHO -->
+
+<div class="painel-carrinho" id="painelCarrinho">
+    
+	<div class="carrinho-conteudo">
+
+		<h2>Seu carrinho (0)</h2>
+
+		<div class="carrinho-vazio">
+
+			<svg width="60" height="60" viewBox="0 0 24 24"
+			fill="none"
+			stroke="black"
+			stroke-width="1.7"
+			stroke-linecap="round"
+			stroke-linejoin="round">
+
+				<path d="M6 2l1.5 4h9L18 2"/>
+				<path d="M3 6h18l-1.5 13h-15z"/>
+
+			</svg>
+
+			<p>Seu carrinho está vazio</p>
+
+			<button class="btn-comprar">
+				Continuar comprando
+			</button>
+
+		</div>
+
+		<div class="info-carrinho">
+
+			<p>Devolução gratuita em 30 dias</p>
+
+			<p>Formas de pagamento disponíveis</p>
+
+			<div class="pagamentos">
+
+				<img src="imagens/paypal.png">
+				<img src="imagens/mastercard.png">
+				<img src="imagens/visa.png">
+				<img src="imagens/amex.png">
+
+			</div>
+		</div>
+	</div>
+</div>
+
 <!-- Destaques e scrollbar -->
 
     <section id="destaques" class="secao-destaques">
     <h2 class="titulo-secao">Destaques</h2>
     <div class="carrossel-wrapper" id="carrossel-wrapper">
         <div class="carrossel">
-            <a href="produto1.html" class="card-destaque">  
+            <a href="produto1.html" class="card-destaque">
                 <img src="imagens/destaque_1.png" alt="Aura Zenith"/>
                 <span class="card-destaque-nome">Aurazenith</span>
-                
             </a>
             <a href="produto2.html" class="card-destaque">
                 <img src="imagens/destaque_2.png" alt="Aura Veon"/>
@@ -551,6 +615,36 @@ cardsSelecao.forEach(card => {
     card.addEventListener('click', () => {
         window.location.href = card.dataset.link;
     });
+
+});
+
+// carrinho
+
+const abrirCarrinho=document.getElementById("abrirCarrinho");
+const painelCarrinho=document.getElementById("painelCarrinho");
+
+abrirCarrinho.addEventListener("click",(e)=>{
+
+	e.preventDefault();
+
+	painelCarrinho.classList.add("ativo");
+	overlay.classList.add("ativo");
+
+	document.body.classList.add("login-travado");
+
+	document.querySelector("header")
+	.classList.add("carrinho-aberto");
+
+});
+
+overlay.addEventListener("click",()=>{
+
+	painelCarrinho.classList.remove("ativo");
+
+	document.body.classList.remove("login-travado");
+
+	document.querySelector("header")
+	.classList.remove("carrinho-aberto");
 
 });
 </script>

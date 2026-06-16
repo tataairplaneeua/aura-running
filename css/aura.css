@@ -784,3 +784,144 @@ body.login-travado{
 	overflow:hidden;
 	height:100vh;
 }
+
+/*================ CARRINHO ESTILO ON ================*/
+
+.painel-carrinho{
+	position:fixed;
+	top:0;
+	right:-55vw;
+	width:55vw;
+	height:100vh;
+	background:#fff;
+	z-index:999;
+	opacity:0;
+	visibility:hidden;
+	transition:.35s ease;
+	padding-top:120px;
+	box-sizing:border-box;
+	overflow-y:auto;
+}
+
+.painel-carrinho.ativo{
+	right:0;
+	opacity:1;
+	visibility:visible;
+}
+
+header.carrinho-aberto .menu-links a{
+	color:#000!important;
+	background:transparent!important;
+}
+
+header.carrinho-aberto .menu-links svg{
+	stroke:#000!important;
+}
+
+header.carrinho-aberto .nav-divider{
+	background:rgba(0,0,0,.2)!important;
+}
+
+header.carrinho-aberto .icone-carrinho{
+	background:#f3f3f3;
+	border-radius:50%;
+}
+
+.carrinho-conteudo{
+	width:82%;
+	margin:0 auto;
+	padding-top:35px;
+	color:#000;
+}
+
+/* título */
+
+.carrinho-conteudo h2{
+	font-size:32px;
+	font-weight:600;
+	letter-spacing:-1px;
+	line-height:1;
+	margin-bottom:100px;
+    margin-top:-30px;
+    margin-left:-10px;
+}
+
+/* vazio */
+
+.carrinho-vazio{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	text-align:center;
+	padding-bottom:110px;
+	border-bottom:1px solid #ececec;
+}
+
+.carrinho-vazio svg{
+	width:34px;
+	height:34px;
+	padding:22px;
+	border:1px solid #111;
+	border-radius:50%;
+	margin-bottom:34px;
+}
+
+.carrinho-vazio p{
+	font-size:24px;
+	font-weight:500;
+	letter-spacing:-1px;
+	margin-bottom:38px;
+	color:#111;
+}
+
+/* botão */
+
+.btn-comprar{
+	height:58px;
+	padding:0 34px;
+	border:none;
+	border-radius:999px;
+	background:#000;
+	color:#fff;
+	font-size:17px;
+	font-weight:600;
+	cursor:pointer;
+	font-family:'Inter',sans-serif;
+}
+
+/* infos */
+
+.info-carrinho{
+	padding:42px 0 60px;
+	border-bottom:1px solid #ececec;
+}
+
+.info-carrinho p:first-child{
+	font-size:15px;
+	margin-bottom:34px;
+	color:#111;
+}
+
+.info-carrinho p:last-of-type{
+	font-size:18px;
+	font-weight:500;
+	margin-bottom:24px;
+	color:#111;
+}
+
+/* pagamentos */
+
+.pagamentos{
+	display:flex;
+	align-items:center;
+	gap:10px;
+	flex-wrap:wrap;
+}
+
+.pagamentos img{
+	height:22px;
+	width:auto;
+	object-fit:contain;
+}
+
+
